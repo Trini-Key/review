@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Title</title>
@@ -25,7 +25,7 @@
     <table>
         <tbody>
             <tr th:each="chatMessage : ${chatMessages}">
-                <td th:text="${chatMessage.username} + ':'"></td> <td th:text="${chatMessage.text}">Hello, World!</td>
+                <td th:unless="${chatMessage.text.isEmpty} or ${chatMessage.username.isEmpty}" th:text="${chatMessage.username} + ':'"></td> <td th:unless="${chatMessage.text.isEmpty} or ${chatMessage.username.isEmpty}" th:text="${chatMessage.text}">Hello, World!</td>
             </tr>
         </tbody>
     </table>
