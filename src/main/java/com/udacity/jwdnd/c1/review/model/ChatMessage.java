@@ -1,16 +1,18 @@
 package com.udacity.jwdnd.c1.review.model;
 
-import org.springframework.stereotype.Service;
-
-import javax.annotation.PostConstruct;
-import java.util.ArrayList;
-import java.util.List;
-
-@Service
 public class ChatMessage {
 
+    private Integer messageId;
     private String text;
     private String username;
+
+    public Integer getMessageId() {
+        return messageId;
+    }
+
+    public void setMessageId(Integer messageId) {
+        this.messageId = messageId;
+    }
 
     public String getText() {
         return text;

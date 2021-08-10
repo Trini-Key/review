@@ -1,12 +1,5 @@
 package com.udacity.jwdnd.c1.review.model;
 
-import org.springframework.stereotype.Service;
-
-import javax.annotation.PostConstruct;
-import java.util.ArrayList;
-import java.util.List;
-
-@Service
 public class ChatForm {
 
     private String messageText;
