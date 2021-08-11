@@ -29,4 +29,8 @@ public class ChatForm {
     public void setUsername(String username) {
         this.username = username;
     }
+
+    public String logOut(){
+        return "/logout";
+    }
 }

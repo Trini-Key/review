@@ -36,6 +36,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.formLogin()
                 .defaultSuccessUrl("/chat", true);
 
+        http.logout()
+                .logoutUrl("/logout")
+                .logoutSuccessUrl("/login");
+
 
     }
 
