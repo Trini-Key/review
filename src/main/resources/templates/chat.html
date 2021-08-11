@@ -18,12 +18,12 @@
         </select>
 
         <input type="submit">
-        <a th:href="@{/logout}">logout</a>
+        <a th:href="@{/chat/logout}">logout</a>
     </form>
     <table>
         <tbody>
             <tr th:each="chatMessage : ${chatMessages}">
-                <td th:unless="${chatMessage.text.isEmpty}" th:text="${chatMessage.username} + ':'"></td> <td th:unless="${chatMessage.text.isEmpty}" th:text="${chatMessage.text}">Hello, World!</td>
+                <td th:text="${chatMessage.username} + ':'"></td> <td th:text="${chatMessage.messageText}">Hello, World!</td>
             </tr>
         </tbody>
     </table>

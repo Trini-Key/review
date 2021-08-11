@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/registration")
 public class SignupController {
 
-    private UserService userService;
+    private final UserService userService;
 
     public SignupController(UserService userService) {
         this.userService = userService;
@@ -29,7 +29,7 @@ public class SignupController {
     public String createUser(@ModelAttribute("signUpForm") User user, Model model){
         String signupError = null;
 
-        if(!userService.isUsernameAvailable(user.getUserName())){
+        if(!userService.isUsernameAvailable(user.getUsername())){
             signupError = "The username already exists.";
         }
 

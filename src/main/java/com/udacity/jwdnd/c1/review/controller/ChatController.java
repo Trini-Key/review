@@ -1,7 +1,6 @@
 package com.udacity.jwdnd.c1.review.controller;
 
 import com.udacity.jwdnd.c1.review.model.ChatForm;
-import com.udacity.jwdnd.c1.review.model.ChatMessage;
 import com.udacity.jwdnd.c1.review.service.MessageService;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -30,7 +29,7 @@ public class ChatController {
     }
 
     @PostMapping
-    public String addMessage(@ModelAttribute("chatForm") Authentication authentication, ChatForm chatForm, Model model){
+    public String addMessage(Authentication authentication, ChatForm chatForm, Model model){
         chatForm.setUsername(authentication.getName());
         this.messageService.addMessage(chatForm);
         chatForm.setMessageText("");
@@ -44,7 +43,7 @@ public class ChatController {
         if(auth != null){
             new SecurityContextLogoutHandler().logout(httpServletRequest, httpServletResponse, auth);
         }
-        return "redirect:/";
+        return "/login";
     }
 
     @ModelAttribute("allTypes")

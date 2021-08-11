@@ -3,7 +3,7 @@ package com.udacity.jwdnd.c1.review.model;
 public class ChatMessage {
 
     private Integer messageId;
-    private String text;
+    private String messageText;
     private String username;
 
     public Integer getMessageId() {
@@ -14,12 +14,12 @@ public class ChatMessage {
         this.messageId = messageId;
     }
 
-    public String getText() {
-        return text;
+    public String getMessageText() {
+        return messageText;
     }
 
-    public void setText(String text) {
-        this.text = text;
+    public void setMessageText(String text) {
+        this.messageText = text;
     }
 
     public String getUsername() {
