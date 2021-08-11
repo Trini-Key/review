@@ -9,6 +9,15 @@ public class User {
     private String firstName;
     private String lastName;
 
+    public User(Integer userId, String userName, String salt, String password, String firstName, String lastName) {
+        this.userId = userId;
+        this.userName = userName;
+        this.salt = salt;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
     public Integer getUserId() {
         return userId;
     }
